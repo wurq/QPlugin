@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QPlugin</string>
+
+    <string name="no_plugin">无插件</string>
 </resources>
