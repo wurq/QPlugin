@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">qplugin</string>
+    <string name="app_name">QPlugin</string>
 
     <string name="empty">没有数据</string>
     <string name="restart_system">重启系统</string>
