@@ -2,4 +2,7 @@
     <string name="app_name">QPlugin</string>
 
     <string name="no_plugin">无插件</string>
+    <string name="action_about">action_about</string>
+    <string name="introducation">introducation</string>
+
 </resources>
