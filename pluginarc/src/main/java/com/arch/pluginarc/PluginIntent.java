@@ -71,6 +71,12 @@ public class PluginIntent extends Intent {
         return super.putExtra(name, value);
     }
 
+    @Override
+    public Intent putExtra(String name, String value) {
+        setupExtraClassLoader(value);
+        return super.putExtra(name, value);
+    }
+
     private void setupExtraClassLoader(Object value) {
         ClassLoader pluginLoader = value.getClass().getClassLoader();
         Configs.sPluginClassloader = pluginLoader;

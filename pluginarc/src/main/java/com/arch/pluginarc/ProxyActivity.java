@@ -23,6 +23,7 @@ public class ProxyActivity  extends AppCompatActivity implements Attachable{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         impl.onCreate(getIntent());
     }
 

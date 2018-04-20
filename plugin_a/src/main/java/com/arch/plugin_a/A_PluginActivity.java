@@ -1,5 +1,7 @@
 package com.arch.plugin_a;
 
+import android.os.Bundle;
+
 import com.arch.pluginarc.BasePluginActivity;
 
 /**
@@ -7,4 +9,9 @@ import com.arch.pluginarc.BasePluginActivity;
  */
 
 public class A_PluginActivity extends BasePluginActivity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_plugin_a);
+    }
 }

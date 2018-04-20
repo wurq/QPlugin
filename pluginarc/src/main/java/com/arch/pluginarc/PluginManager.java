@@ -180,7 +180,7 @@ public class PluginManager {
         if (className.startsWith(".")) {
             className = dlIntent.getPluginPackage() + className;
         }
-        className = "com.arch.plugin_a.A_PluginActivity";
+//        className = "com.arch.plugin_a.A_PluginActivity";
         return className;
     }
 

@@ -205,6 +205,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        } catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
+
+//        Intent intent = new Intent(this, ProxyActivity.class);
+//        startActivity(intent);
+
         PluginItem item = mPluginItems.get(position);
         PluginManager pluginManager = PluginManager.getInstance(this);
         pluginManager.startPluginActivity(this,
