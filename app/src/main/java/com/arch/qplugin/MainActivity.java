@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public static final String TAG = "host-MainActivity";
 
-    public static final String FROM = "extra.from";
-    public static final int FROM_INTERNAL = 0;
-    public static final int FROM_EXTERNAL = 1;
-
     private ArrayList<PluginItem> mPluginItems = new ArrayList<PluginItem>();
     private PluginAdapter mPluginAdapter;
 
@@ -124,7 +120,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                PluginUtils.showDialog(this, getString(R.string.action_about), getString(R.string.introducation));
+                PluginUtils.showDialog(this,
+                        getString(R.string.action_about),
+                        getString(R.string.introducation));
                 break;
 
             default:
@@ -215,6 +213,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 new PluginIntent(item.packageInfo.packageName));
 
     }
-
 
 }

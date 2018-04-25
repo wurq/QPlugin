@@ -40,7 +40,7 @@ import static com.arch.pluginarc.PluginManager.EXTRA_PACKAGE;
 
 public class ProxyImpl {
 
-    private static final String TAG = "DLProxyImpl";
+    private static final String TAG = "ProxyImpl";
 
     private String mClass;
     private String mPackageName;
@@ -136,7 +136,7 @@ public class ProxyImpl {
             mPluginActivity = (IPlugin) instance;
             ((Attachable) mProxyActivity).attach(mPluginActivity, mPluginManager);
             Log.d(TAG, "instance = " + instance);
-            // attach the proxy activity and plugin package to the mPluginActivity
+
             mPluginActivity.attach(mProxyActivity, mPluginPackage);
 
             Bundle bundle = new Bundle();

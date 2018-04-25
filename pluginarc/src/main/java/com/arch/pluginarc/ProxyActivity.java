@@ -3,7 +3,6 @@ package com.arch.pluginarc;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -36,21 +35,21 @@ public class ProxyActivity  extends AppCompatActivity implements Attachable{
     public AssetManager getAssets() {
         return impl.getAssets() == null ? super.getAssets() : impl.getAssets();
     }
-
-    @Override
-    public Resources getResources() {
-        return impl.getResources() == null ? super.getResources() : impl.getResources();
-    }
-
-    @Override
-    public Resources.Theme getTheme() {
-        return impl.getTheme() == null ? super.getTheme() : impl.getTheme();
-    }
-
-    @Override
-    public ClassLoader getClassLoader() {
-        return impl.getClassLoader();
-    }
+//
+//    @Override
+//    public Resources getResources() {
+//        return impl.getResources() == null ? super.getResources() : impl.getResources();
+//    }
+//
+//    @Override
+//    public Resources.Theme getTheme() {
+//        return impl.getTheme() == null ? super.getTheme() : impl.getTheme();
+//    }
+//
+//    @Override
+//    public ClassLoader getClassLoader() {
+//        return impl.getClassLoader();
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
