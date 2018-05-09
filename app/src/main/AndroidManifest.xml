@@ -3,6 +3,7 @@
     package="com.arch.qplugin">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name="com.arch.application.QPluginApplication"
         android:allowBackup="true"
@@ -18,6 +19,7 @@
             android:theme="@style/BaseAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -30,7 +32,6 @@
                 <action android:name="com.arch.ipccenter.back.BackEngine" />
             </intent-filter>
         </service>
-
         <service
             android:name="com.arch.ipccenter.fore.ForeService"
             android:exported="false"
@@ -40,8 +41,11 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name="com.arch.plugin.ProxyActivity"
+            android:process=":fore">
 
+        </activity>
     </application>
-
 
 </manifest>

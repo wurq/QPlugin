@@ -1,4 +1,4 @@
-package com.arch.plugin;
+package com.arch.plugincore;
 
 /**
  * Created by wurongqiu on 2018/5/4.

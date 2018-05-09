@@ -1,4 +1,4 @@
-package com.arch.plugin;
+package com.arch.plugincore;
 
 
 import android.os.Bundle;

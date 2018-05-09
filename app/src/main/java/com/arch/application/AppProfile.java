@@ -18,7 +18,7 @@ import android.util.Log;
 public abstract class AppProfile {
     public static final String AppName = "qplugin";
 
-    public static final String PRODUCT_NAME = "KKLOnLine";
+    public static final String PRODUCT_NAME = "QPlugin";
 
     /* package */ static Context sContext;
 
