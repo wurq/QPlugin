@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">QPlugin</string>
-
-    <string name="empty">没有数据</string>
-    <string name="restart_system">重启系统</string>
-    <string name="sdcard_not_exist_error">请插入SD卡</string>
-    <string name="sdcard_not_enough_error">存储空间不足，无法保存此次多媒体消息</string>
-    <string name="sdcard_not_enough_warning">剩余存储空间很少，建议清理存储卡</string>
-</resources>

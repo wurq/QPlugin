@@ -31,7 +31,7 @@ public interface IPi {
 
     /**
      * 插件移除时调用，用于清理内存。
-     * @throws Exception 如有不清楚,请联系weechen
+     * @throws Exception
      */
     public void onDestroy() throws Exception;
 

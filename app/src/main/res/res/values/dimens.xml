@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!--Toast-->
-    <dimen name="toast_padding_top_bottom">15dp</dimen>
-    <dimen name="toast_padding_left_right">16dp</dimen>
-
-    <dimen name="text_size_l">15sp</dimen>
-</resources>
