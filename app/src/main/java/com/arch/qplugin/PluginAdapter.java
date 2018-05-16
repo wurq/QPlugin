@@ -5,6 +5,7 @@ package com.arch.qplugin;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +22,10 @@ import java.util.ArrayList;
  * Created by wurongqiu on 2018/5/11.
  */
 
-public class PluginAdapter extends RecyclerView.Adapter {
+public class PluginAdapter extends RecyclerView.Adapter{
+    public static final String TAG = "PluginAdapter";
 
-    PluginViewHolder mPluginViewHolder;
+//    PluginViewHolder mPluginViewHolder;
 
     protected final Context mContext;
     protected final LayoutInflater mLayoutInflater;
@@ -40,7 +42,6 @@ public class PluginAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-
                  return new PluginViewHolder(LayoutInflater
                         .from(parent.getContext())
                         .inflate(R.layout.plugin_item, null));
@@ -56,6 +57,8 @@ public class PluginAdapter extends RecyclerView.Adapter {
         pluginViewHolder.appName.setText(PluginUtils.getAppLabel(AppProfile.getContext(), item.pluginPath));
         pluginViewHolder.apkName.setText(item.pluginPath.substring(item.pluginPath.lastIndexOf(File.separatorChar) + 1));
         pluginViewHolder.packageName.setText(packageInfo.applicationInfo.packageName);
+
+        pluginViewHolder.setTag(position);
     }
 
     @Override
@@ -63,12 +66,19 @@ public class PluginAdapter extends RecyclerView.Adapter {
         return mPluginItems == null ? 0 : mPluginItems.size();
     }
 
-    class PluginViewHolder extends RecyclerView.ViewHolder {
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
+    class PluginViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
 
         public ImageView appIcon;
         public TextView appName;
         public TextView apkName;
         public TextView packageName;
+
+        public int apkTag = 0;
 
         public PluginViewHolder(View itemView) {
             super(itemView);
@@ -76,6 +86,20 @@ public class PluginAdapter extends RecyclerView.Adapter {
             appName = (TextView) itemView.findViewById(R.id.app_name);
             apkName = (TextView) itemView.findViewById(R.id.apk_name);
             packageName = (TextView) itemView.findViewById(R.id.package_name);
+            itemView.setOnClickListener(this);//.setOnClickListener(this);
+        }
+
+        public void setTag(int position) {
+            apkTag = System.identityHashCode(position);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.d(TAG,"msg+++");
+
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(itemView, getAdapterPosition());
+            }
         }
     }
 
@@ -85,5 +109,12 @@ public class PluginAdapter extends RecyclerView.Adapter {
 
         public PluginItem() {
         }
+    }
+
+    private OnItemClickListener mOnItemClickListener = null;
+
+    //define interface
+    public static interface OnItemClickListener {
+        void onItemClick(View view , int position);
     }
 }

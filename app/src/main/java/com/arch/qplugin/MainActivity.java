@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -104,8 +105,33 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         mPluginAdapter = new PluginAdapter(MainActivity.this,mPluginItems);
         mRecyclerView.setAdapter(mPluginAdapter);
+        mPluginAdapter.setOnItemClickListener(new PluginAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(View view , int position){
+                Log.d(TAG,"msg ++++++++ view: " + view.toString() + "position : " + position);
+            }
+        });
+
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+//        mRecyclerView.set
 //        mListView.setAdapter(mPluginAdapter);
-//        mListView.setOnItemClickListener(this);
+//        mRecyclerView.setOnItemClickListener(this);
 //        mPluginAdapter.notifyDataSetChanged();
     }
 
