@@ -3,7 +3,7 @@
     package="com.arch.qplugin">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.arch.application.QPluginApplication"
@@ -44,9 +44,8 @@
 
         <activity
             android:name="com.arch.plugin.ProxyActivity"
-            android:process=":fore">
-
-        </activity>
+            android:process=":fore"></activity>
+        <activity android:name="com.arch.plugin.StandardActivity"></activity>
     </application>
 
 </manifest>

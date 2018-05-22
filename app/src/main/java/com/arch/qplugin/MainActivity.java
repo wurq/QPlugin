@@ -1,5 +1,6 @@
 package com.arch.qplugin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.arch.pibase.BasePiController;
+import com.arch.plugincore.PluginIntent;
 import com.arch.qplugin.PluginAdapter.PluginItem;
 import com.arch.utils.HostUtils;
 import com.arch.utils.PluginUtils;
@@ -18,6 +21,7 @@ import com.arch.utils.PluginUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,7 +112,13 @@ public class MainActivity extends AppCompatActivity {
         mPluginAdapter.setOnItemClickListener(new PluginAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(View view , int position){
-                Log.d(TAG,"msg ++++++++ view: " + view.toString() + "position : " + position);
+                Log.d(TAG,"msg ++++++++ view: " + view.toString() + "pn : " + position);
+                PluginIntent pluginIntent = new PluginIntent();
+                pluginIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                pluginIntent.setLaunchMode(PluginIntent.MODE_ACTIVITY_SINGLE_TASK);
+
+                BasePiController.getInstance().startActivityForResult(pluginIntent,0);
+//                BasePiManager.getPiManager()
             }
         });
 

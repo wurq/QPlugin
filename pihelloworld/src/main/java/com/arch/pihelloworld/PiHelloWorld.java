@@ -1,8 +1,10 @@
 package com.arch.pihelloworld;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.arch.plugincore.AbsPlugin;
+import com.arch.plugincore.BasePage;
 import com.arch.plugincore.PluginCallback;
 import com.arch.plugincore.PluginContext;
 
@@ -31,6 +33,32 @@ public class PiHelloWorld extends AbsPlugin {
 
     @Override
     public void onDestroy() throws Exception {
+
+    }
+
+
+    /**
+     * 根据view id 获取插件对应的页面
+     *
+     * @param viewId
+     *            页面id
+     * @param activity
+     *            承载view的activity
+     * @return 页面
+     */
+    @Override
+    public BasePage getActivityView(int viewId, Activity activity) {
+        switch (viewId) {
+            // 插件框架
+            case HelloWorldConst.ViewId.HELLO_WORLD_MAIN_VIEW: { // 插件主页面
+                return new MainExampleView(activity);
+            }
+
+            default: {
+                return null;
+            }
+        }
+
 
     }
 

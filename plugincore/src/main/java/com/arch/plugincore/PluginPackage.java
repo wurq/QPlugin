@@ -3,6 +3,7 @@ package com.arch.plugincore;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.content.res.Resources.Theme;
 import android.util.Log;
 
 import java.lang.reflect.Method;
@@ -123,6 +124,15 @@ public class PluginPackage implements IContext{
             // 测试模式下将异常抛出
 //            BasePiApplication.throwDebugException(e.getMessage(), e);
         }
+    }
+
+
+    public Theme getTheme() {
+        return mPluginTheme;
+    }
+
+    public Context getAppContext(){
+        return mAppContext;
     }
 
 }
