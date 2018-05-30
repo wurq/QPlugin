@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.arch.base.ActivityServiceImpl;
 import com.arch.commonconst.CommonCst;
-import com.arch.ipccenter.base.ActivityServiceImpl;
 import com.arch.plugincore.AbsPlugin;
 import com.arch.plugincore.BasePage;
 import com.arch.plugincore.IPluginUIEnv;
 import com.arch.plugincore.PluginContext;
 import com.arch.plugincore.PluginIntent;
+
 
 /**
  * Created by wurongqiu on 2018/5/18.
@@ -45,12 +46,20 @@ public abstract class BasePiActivity extends AppCompatActivity implements IPlugi
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
         // 强制设置为竖屏
 
-        if (!mIsUseAsPiActivity) {
-            super.onCreate(savedInstanceState);
+        mView = createView();
+        if (mView == null) {
             return;
         }
+
+
+//        if (!mIsUseAsPiActivity) {
+//            super.onCreate(savedInstanceState);
+//            return;
+//        }
 
 //        BombStrategy.onUICreate();
 

@@ -1,4 +1,4 @@
-package com.arch.ipccenter.base;
+package com.arch.base;
 
 //import ActivityService;
 

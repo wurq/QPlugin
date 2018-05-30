@@ -1,4 +1,4 @@
-package com.arch.plugin;
+package com.arch.pibase.pibaseactivity;
 
 import android.content.Context;
 import android.content.Intent;

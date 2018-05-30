@@ -45,7 +45,6 @@
         <activity
             android:name="com.arch.plugin.ProxyActivity"
             android:process=":fore"></activity>
-        <activity android:name="com.arch.plugin.StandardActivity"></activity>
     </application>
 
 </manifest>

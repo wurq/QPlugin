@@ -2,6 +2,8 @@ package com.arch.plugincore;
 
 import android.app.Activity;
 
+import com.arch.pibase.BasePiController;
+
 /**
  * Created by wurongqiu on 2018/5/5.
  */
@@ -118,6 +120,8 @@ public abstract class AbsPlugin implements IPi {
      * @param outer 指明启动软件内部界面或外部界面。true:目的activity为软件外部activity; false:软件内部activity
      */
     public final void startActivityForResult(PluginIntent intent, int requestCode, boolean outer) {
+
+        BasePiController.getInstance().startActivityForResult(intent);
 //        ForePiManager.getPiManager().getPluginControler().startActivityForResult(intent, requestCode, outer);
     }
 }

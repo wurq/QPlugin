@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arch.plugincore" />
+    package="com.arch.plugincore" >
+    <application>
+
+        <activity android:name="com.arch.pibase.pibaseactivity.StandardActivity"></activity>
+
+    </application>
+
+</manifest>

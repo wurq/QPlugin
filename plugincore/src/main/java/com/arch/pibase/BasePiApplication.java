@@ -2,8 +2,6 @@ package com.arch.pibase;
 
 import android.content.Context;
 
-import com.arch.application.AppProfile;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -11,6 +9,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 
 public class BasePiApplication {
+
+    private static Context mContext = null;
 
     static final String TAG = "BasePluginApplication";
 
@@ -30,7 +30,14 @@ public class BasePiApplication {
      * 获取程序上下文
      */
     public static Context getAppContext() {
-        return AppProfile.getContext();
+        return mContext;
+//        return BasePiApplication.getContext();
     }
 
+    /**
+     * 获取程序上下文
+     */
+    public static void setAppContext(Context context) {
+        mContext = context;
+    }
 }

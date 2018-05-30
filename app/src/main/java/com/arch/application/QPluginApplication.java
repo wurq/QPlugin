@@ -9,6 +9,7 @@ import com.arch.base.util.ProcessUtil;
 import com.arch.commonconst.AppProcess;
 import com.arch.commonconst.RunType;
 import com.arch.ipccenter.fore.ForeEngine;
+import com.arch.pibase.BasePiApplication;
 
 /**
  * Created by wurongqiu on 2018/3/30.
@@ -34,6 +35,8 @@ public class QPluginApplication extends BaseApplication {
 
         Context context = getApplicationContext();
         AppProfile.setContext(context);
+
+        BasePiApplication.setAppContext(context);
         AppProfile.setStartTime(System.currentTimeMillis() /*+ DataConst.RuntimeStatus.CURRENT_TIME*/);
         sMainThreadHandler = new Handler();
 

@@ -5,14 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.arch.ipccenter.base.ActivityServiceImpl;
-import com.arch.plugin.ProxyActivity;
-import com.arch.plugin.StandardActivity;
+import com.arch.base.ActivityServiceImpl;
+import com.arch.pibase.pibaseactivity.StandardActivity;
 import com.arch.plugincore.PluginContext;
 import com.arch.plugincore.PluginIntent;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.arch.ipccenter.base.ActivityServiceImpl;
+//import com.arch.plugin.ProxyActivity;
+//import com.arch.plugin.StandardActivity;
 
 
 /**
@@ -44,6 +47,19 @@ public class BasePiController {
         }
         return _instance;
     }
+
+    public final void startActivityForResult(PluginIntent pluginIntent)  {
+        Class<?> standardCls = null;
+        standardCls = StandardActivity.class;
+
+        pluginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        pluginIntent.setClass(mContext, standardCls);
+
+        BasePiApplication.getAppContext().startActivity(pluginIntent);
+
+    }
+
 
     public final void startActivityForResult(PluginIntent pluginIntent, int requestCode) {
         Class<?> taskCls = null;
@@ -113,7 +129,7 @@ public class BasePiController {
             }
 
             Class<?> taskCls = null;
-            taskCls = ProxyActivity.class;
+            taskCls = StandardActivity.class;
             if(null != taskCls)
             {
                 intent.setClass(BasePiApplication.getAppContext(), taskCls);
